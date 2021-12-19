@@ -1,0 +1,66 @@
+<mat-card class="announcement-details-container">
+    <div>
+        <img class="main-image" mat-card-image [src]="announcement.imageUrl" alt="Photo of a Shiba Inu">   
+    </div>
+    <div class="right-side-container">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{announcement.title}}</mat-card-title>
+            <mat-card-subtitle>{{announcement.governorate}}, {{announcement.city}}, {{announcement.street}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <div>
+                <p>
+                    Surface Area: {{announcement.sqm}} m²<br/>
+                </p>
+                <div *ngIf="isHouse()">
+                    Number of rooms: {{announcement.rooms}}<br/>
+                    Number of bathrooms: {{announcement.baths}}<br/>
+                    Is the kitched equipped ? : {{announcement.equippedKitchen ? 'YES':'NO'}}<br/>
+                    Is there a Garden ? : {{announcement.garden ? 'YES':'NO'}}<br/>
+                </div>
+
+                <div *ngIf="!isHouse()">
+                    Which Floor :{{floorNumber(announcement.floor)}} <br>
+                    Is there an Elevator? : {{announcement.elevator ? 'YES':'NO'}}
+                </div>
+                <p> Description: </p>
+                <p style="overflow:scroll; height:150px; overflow-x: hidden;">
+                   
+                    &nbsp;&nbsp;{{alignDescription(announcement.description)}}
+                </p>
+            </div>
+
+          </mat-card-content>
+          <mat-card-actions style="display: flex; justify-content: space-between;">
+            <button mat-raised-button color="warn" (click)="openDialog()">Schedule a Visit</button>
+            <button mat-button color="warn">Announcement's Date: {{announcement.uploaded | date: 'medium'}}</button>
+          </mat-card-actions>
+    </div>
+  </mat-card>
+  
+ <!--
+     <mat-carousel
+timings="250ms ease-in"
+[autoplay]="true"
+[interval]="5000"
+color="accent"
+maxWidth="auto"
+[proportion]="25"
+[slides]="5"
+[loop]="true"
+[hideArrows]="false"
+[hideIndicators]="false"
+[useKeyboard]="true"
+[useMouseWheel]="false"
+orientation="ltr"
+>
+<mat-carousel-slide
+  #matCarouselSlide
+  *ngFor="let slide of announcement.secondaryImagesUrl; let i = index"
+  [image]="slide"
+  overlayColor="#00000040"
+  [hideOverlay]="false"
+></mat-carousel-slide>
+</mat-carousel>
+ --> 

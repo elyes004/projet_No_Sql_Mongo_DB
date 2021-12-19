@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Confirm action</h1>
+<div mat-dialog-content style="display: flex; flex-direction: column;">
+    <mat-form-field>
+        <input placeholder="new title" matInput [(ngModel)]="local_data.title">
+    </mat-form-field>     
+    <mat-form-field>
+        <input placeholder="number of rooms" matInput [(ngModel)]="local_data.rooms">
+    </mat-form-field> 
+    <mat-form-field>
+        <input placeholder="number of bathrooms" matInput [(ngModel)]="local_data.baths">
+    </mat-form-field> 
+</div>
+<div mat-dialog-actions class="mt-15">
+  <button mat-raised-button color="primary" 
+  [mat-dialog-close]="true" cdkFocusInitial (click)="doAction()">Update</button>
+  <button mat-raised-button mat-dialog-close>Cancel</button>
+</div>

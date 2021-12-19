@@ -1,0 +1,10 @@
+.container{
+
+    background-image: url('../../../assets/2819.jpg');
+    background-size: 100%;
+    width: 100vw;
+    height: 100vh;
+    border: 2px solid;
+    padding: 0;
+    opacity: 0.8;
+}

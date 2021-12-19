@@ -1,0 +1,39 @@
+form{
+    display: flex;
+    background-image: url('../../../assets/signin_signup_bg.jpg');
+    height: 100vh;
+}
+
+mat-card {
+    margin:  auto ;
+    opacity: 85%;
+
+}
+
+mat-form-field {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    width: 100%;
+}
+mat-card-footer button {
+    display: inline;
+    margin-left: 40%;
+}
+button[type=submit] {
+    width: 40%;
+    margin-left: 27%;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    height: 200px;
+}
+.column {
+    flex: 100%;
+}
+p {
+    padding: 8px;
+}
+
+
+  

@@ -1,0 +1,73 @@
+
+
+<div class="market-container" >
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input  type="text" placeholder="search for an announcement" aria-label="Number"
+              matInput [(ngModel)]="searchText" name="searchText">
+    </mat-form-field>
+  </form>
+  <mat-card class="example-card" *ngFor="let announcement of announcements | filter: searchText">
+    
+    <div>
+      <img mat-card-image [src]="announcement.imageUrl" alt="announcement">
+    <mat-card-content>
+      <h3 style="font-weight:bolder; color: blue;">{{announcement.title}} </h3>
+      <h5>{{announcement.governorate}}, {{announcement.city}} </h5>
+      <p class="description">
+        {{cropDescription(announcement.description)}}
+      </p>
+    </mat-card-content>
+    </div>
+    <mat-card-actions>
+      <button class="view-detail-btn" mat-raised-button (click)="viewItem(announcement)">view details <mat-icon>visibility</mat-icon></button>
+      <button class="favorite-btn" mat-button color="accent" >{{announcement.price}}dt</button>
+    </mat-card-actions>
+  </mat-card>
+  
+</div>
+
+
+
+
+<!--
+  <mat-drawer-container class="example-container">
+  <mat-drawer mode="side" #sidenav opened>
+      
+      <button (click)="sidenav.toggle()"><mat-icon>close</mat-icon></button>
+      <section class="example-section">
+        <mat-checkbox class="example-margin">Check me!</mat-checkbox>
+        <mat-checkbox class="example-margin" [disabled]="true">Disabled</mat-checkbox>
+      </section>
+    
+  </mat-drawer>
+
+  <mat-drawer-content>     
+
+    <mat-grid-list gutterSize="10px" rowHeight="450px" [cols]="breakpoint" (window:resize)="onResize($event)">
+
+      <mat-grid-tile *ngFor="let i of range">
+          <mat-card class="example-card">
+              
+              <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+              <mat-card-content>
+                <p>
+                  The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                  A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                  bred for hunting.
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button class="view-detail-btn" mat-raised-button>view details <mat-icon>visibility</mat-icon></button>
+                <button class="favorite-btn" mat-button color="accent"><mat-icon>favorite</mat-icon></button>
+              </mat-card-actions>
+            </mat-card>
+            
+      </mat-grid-tile>
+      
+    </mat-grid-list>
+
+  </mat-drawer-content>
+</mat-drawer-container>
+-->
+  

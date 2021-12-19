@@ -1,0 +1,100 @@
+<form (submit)="submitHouse()">
+    <h1 mat-dialog-title>Add a House Announcement</h1>
+    <div mat-dialog-content class="modal-content">
+        <!-- TITLE -->
+        <label for="title">Title</label>
+        <input [(ngModel)]="announcement.title" name="title" type="text" id="title"  placeholder="TITLE">
+
+        <!-- AREA -->
+        <label for="sqm">Area (m²)</label>
+        <input [(ngModel)]="announcement.sqm" name="sqm" type="text" id="sqm"  placeholder="Area">
+
+        <!-- FOR SALE OR RENT -->
+        <label for="type_ann">For Sale/Rent</label>
+        <select [(ngModel)]="announcement.type_ann" name="type_ann" id="type_ann" >
+            <option value="sale">Sale</option>
+            <option value="rent">Rent</option>
+        </select>
+
+        <!-- GOVERNORATE -->
+        <label for="governorate">Governorate</label>
+        <select [(ngModel)]="announcement.governorate" name="governorate" id="governorate">
+            <option value="tunis">tunis</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+        </select>
+
+        <!-- CITY -->
+        <label for="city">City</label>
+        <select [(ngModel)]="announcement.city" name="city" id="city">
+            <option value="tunis">tunis</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+        </select>
+
+        <!-- STREET -->
+        <label for="street">Street</label>
+        <input [(ngModel)]="announcement.street" name="street" type="text" id="street"  placeholder="Street">
+
+        <!-- NUMBER OF BATHROOMS -->
+        <label for="baths">Number of Bathrooms</label>
+        <input [(ngModel)]="announcement.baths" name="baths" type="text" id="baths" placeholder="Number of Bathrooms">
+
+        <!-- NUMBER OF ROOMS -->
+        <label for="rooms">Number of rooms</label>
+        <input [(ngModel)]="announcement.rooms" name="rooms" type="text" id="rooms"  placeholder="Number of Rooms">
+
+        <!-- KITCHEN EQUIPPED ? -->
+        <label for="equippedKitchen">Is the kitchen equipped ?</label>
+        <select [(ngModel)]="announcement.equippedKitchen" name="equippedKitchen" id="equippedKitchen" name="equippedKitchen">
+            <option value="false">No</option>
+            <option value="true">Yes</option>
+        </select>
+
+        <!-- THERE IS A GARDEN ? -->
+        <label for="garden">Is there a garden ?</label>
+        <select [(ngModel)]="announcement.garden" name="garden" id="garden">
+            <option value="false">No</option>
+            <option value="true">Yes</option>
+        </select>
+
+        <!-- UPLOAD THE MAIN IMAGE -->
+        <label for="upload-main-image">Upload one picture of the House</label>
+        <input id="upload-main-image" type="file" style="display: none;"
+                (change)="onMainImageSelected($event)" #mainImageUpload multiple>
+
+        <div class="file-upload">
+            <button mat-mini-fab color="primary" class="upload-btn"
+            (click)="mainImageUpload.click()" type="button">
+                <mat-icon>attach_file</mat-icon>
+            </button>
+           
+        </div>
+
+        <!-- UPLOAD THE DETAILED IMAGES -->
+        <label for="upload-detailed-image">Upload Detailed Images of the House</label>
+        <input id="upload-detailed-image" type="file" style="display: none;"
+                (change)="onDetailImagesSelected($event)" #detailedImagesUplaod multiple>
+
+        <div class="file-upload">
+            <button mat-mini-fab color="primary" class="upload-btn"
+            (click)="detailedImagesUplaod.click()" type="button">
+                <mat-icon>attach_file</mat-icon>
+            </button>
+           
+        </div>
+
+        <!-- PRICE -->
+        <label for="price">Price</label>
+        <input [(ngModel)]="announcement.price" name="price" type="text" id="price" placeholder="Put a Price">
+
+        <!-- DESCRIPTION -->
+        <label for="description">description</label>
+        <textarea [(ngModel)]="announcement.description" name="description" id="description" cols="30" rows="10"></textarea>
+
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button  mat-dialog-close color="primary" type="submit">submit</button>
+        <button mat-button mat-dialog-close>Close</button>
+    </div>
+</form>

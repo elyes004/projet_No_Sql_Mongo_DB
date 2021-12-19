@@ -1,0 +1,29 @@
+<div class="pushing-down-div">
+  <!--  just so the header can be fixed and doesnt overlap bottom content-->
+</div>
+<mat-toolbar color="primary">
+    
+      <mat-toolbar-row>
+        <img src="../../../assets/dariLOGO.svg" alt="logo" style="height:48px; width: 100px;" > 
+      <div class="big-screen-div">
+        <button  mat-button routerLinkActive="active-nav-item" [routerLinkActiveOptions]="{exact: true}" routerLink="home"><mat-icon>home</mat-icon> Home</button>
+        <button  mat-button routerLinkActive="active-nav-item" [routerLinkActiveOptions]="{exact: true}" routerLink="market"><mat-icon>store</mat-icon> Market</button> 
+        <button  mat-button routerLinkActive="active-nav-item" [routerLinkActiveOptions]="{exact: true}" routerLink="contact"><mat-icon>call</mat-icon> Contact Us</button>
+      </div>
+      <span class="spacer"></span>
+      <button *ngIf="!loggedIn()" mat-button routerLinkActive="active-nav-item" [routerLinkActiveOptions]="{exact: true}" routerLink="signup">Sign Up</button>
+      <button *ngIf="!loggedIn()" mat-button routerLinkActive="active-nav-item" [routerLinkActiveOptions]="{exact: true}" routerLink="signin">Sign In</button>
+      <button *ngIf="loggedIn()" mat-button (click)="onLogOut()">LogOut</button>
+      <button *ngIf="loggedIn()" mat-button routerLinkActive="active-nav-item" [routerLinkActiveOptions]="{exact: true}" routerLink="profile"><mat-icon>account_circle</mat-icon> Profile</button>
+     
+      </mat-toolbar-row> 
+      <mat-toolbar-row class="small-screen-div">
+    
+        
+        <button  mat-button routerLinkActive="active-nav-item" [routerLinkActiveOptions]="{exact: true}" routerLink="home"><mat-icon>home</mat-icon> Home</button>
+        <button  mat-button routerLinkActive="active-nav-item" [routerLinkActiveOptions]="{exact: true}" routerLink="market"><mat-icon>store</mat-icon> Market</button>
+        <button  mat-button routerLinkActive="active-nav-item" [routerLinkActiveOptions]="{exact: true}" routerLink="contact"><mat-icon>call</mat-icon> Contact Us</button>
+         
+      </mat-toolbar-row>
+</mat-toolbar>
+  
